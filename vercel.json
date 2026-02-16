@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/forms_output/index.html"
+    }
+  ]
+}
+
