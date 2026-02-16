@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OC Evaluation - Ella Merkel</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="fixed-topbar">
+        <div class="oc-title">OC Presentation 1</div>
+        <button class="download-btn no-print" onclick="window.print()" aria-label="Download as PDF" title="Download as PDF">
+            <svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 3v10m0 0l4-4m-4 4l-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 17v3h16v-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+    
+    <div class="header">
+        <h2>Ella Merkel</h2>
+    </div>
+    
+    <div class="chart-container">
+        <div id="chartLegend" class="legend-pills"></div>
+        <canvas id="ratingsChart"></canvas>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Peer Reviews</div>
+
+        <div class="review peer-review peer-1">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-1">Peer 1</span></div>
+
+            <div class="project-description">
+                "Memories affect how we interact with objects and what our interests are. Survey Knoxville residents and create an exhibition."
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">Clear structure that shows what the background of the project is</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">Flowed well points were very clear.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">Clear speech and was well researched and prepared but not robotic</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">Clean visuals had personal connection and reason.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">Audience was engaged in what the topic was</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">Took questions and feedback well.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+        </div>
+
+        <div class="review peer-review peer-2">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-2">Peer 2</span></div>
+
+            <div class="project-description">
+                "This project is to look into how people grow into interesting things. She aims to generate an exhibition based on peoples lives and stories. "
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">Ellas topic was really interesting and Im excited to see the research she does moving forward.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">The presentation was good. She explained her topic well and helped guide us the viewer through what her process may be.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">What Ella was saying was so beautiful and interesting but it became a little hard to follow when she would get stuck (obviously not her fault and I totally understand those nerves!)</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">The visual helped convey the idea but didn't help me see the vision moving forward.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">Ella was obviously so passionate and excited about her topic. It was hard to not listen and hang on to every word she said.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">She answered questions well for the time she had.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="additional-comments">
+                <div class="additional-comments-label">Additional Comments:</div>
+                <div>Fantastic job Ella!</div>
+            </div>
+
+        </div>
+
+        <div class="review peer-review peer-3">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-3">Peer 3</span></div>
+
+            <div class="project-description">
+                "A celebration of meaning and how personable it is. "
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">She set up her points really well and had a good order.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">I was able to keep track of her points entirely.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">She explained everything very vividly.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">Clean image-based setup, left plenty of room for pairing visual feeling with verbal explanation.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">Ella knows exactly what she wants to do and made it very clear to the audience.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">She considered each question and consideration thoughfully and thoroughly.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="additional-comments">
+                <div class="additional-comments-label">Additional Comments:</div>
+                <div>Wonderful idea I look forward to the final result and seeing how you get there. </div>
+            </div>
+
+        </div>
+
+        <div class="review peer-review peer-4">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-4">Peer 4</span></div>
+
+            <div class="project-description">
+                "Celebrating the idea that everyone has different memories that may be attached to physical objects, so the project figuring out a way to explore and show this between different people."
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">I think the sequence of the presentation made sense. I do think possibly finding a way to bring in research could help support what your message is.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">I think the flow could be improved on, I think you started really strong when explaining your own personal experience, but I think transitioning into what you want your project to be about could be improved.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">I think you spoke well and clear, but had a lot of filler words.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">had a lot of good visuals</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">I think you touched on emotion really well</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">answered questions well</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr>
+    <div class="instructor-section">
+        <div class="section-title">Instructor Review - Everett</div>
+
+        <div class="review">
+
+            <div class="project-description">
+                "A generative exhibition based on a survey."
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">You nicely grounded us in the initial narrative, and you wisely situated us in the photograph before we pivoted into your conceptual direction. You also did a good job pointing to the visual motif that framed your ideas. I feel like I better understood your project when you pointed to the exhibition elements</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">Nice transitions!</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">A script will definitely be helpful here; it will just ground you a bit.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">There's a solid balance between visuals and type within this presentation.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">You did a great job connecting to the room by beginning in a vulnerable, honest place.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">Well done!</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="additional-comments">
+                <div class="additional-comments-label">Additional Comments:</div>
+                <div>Link up with Natalie to help constrain your survey a bit.</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Chart data
+        const chartData = {"labels": ["Structure", "Transitions", "Speaking", "Visuals", "Engagement", "Q+A"], "datasets": [{"label": "Peer 1", "data": [5.04, 5.04, 5.04, 5.04, 5.04, 5.04], "originalData": [5.0, 5.0, 5.0, 5.0, 5.0, 5.0], "borderColor": "#ff2bd6", "backgroundColor": "#ff2bd6", "fill": false, "order": 1000}, {"label": "Peer 2", "data": [4.0, 4.0, 3.0, 3.0, 4.0, 4.0], "originalData": [4.0, 4.0, 3.0, 3.0, 4.0, 4.0], "borderColor": "#004aea", "backgroundColor": "#004aea", "fill": false}, {"label": "Peer 3", "data": [4.96, 4.96, 4.96, 4.96, 4.96, 4.96], "originalData": [5.0, 5.0, 5.0, 5.0, 5.0, 5.0], "borderColor": "#006834", "backgroundColor": "#006834", "fill": false, "order": 998}, {"label": "Peer 4", "data": [4.0, 3.0, 4.0, 5.0, 4.0, 5.0], "originalData": [4.0, 3.0, 4.0, 5.0, 4.0, 5.0], "borderColor": "#ff610b", "backgroundColor": "#ff610b", "fill": false}, {"label": "Everett", "data": [3.0, 3.0, 3.0, 4.0, 4.0, 4.0], "borderColor": "#000000", "backgroundColor": "#000000", "borderWidth": 4, "borderDash": [], "fill": false}]};
+        
+        // Create the chart
+        const ctx = document.getElementById('ratingsChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: chartData.labels,
+                datasets: chartData.datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 6,
+                        ticks: {
+                            stepSize: 1,
+                            callback: function(value) {
+                                // Keep headroom to 6 but don't label it (so it still reads as a 1–5 rubric)
+                                return value === 6 ? '' : value;
+                            }
+                        },
+                        title: {
+                            display: false
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: false
+                        }
+                    }
+                },
+                elements: {
+                    line: {
+                        tension: 0.4,
+                        borderWidth: 3
+                    },
+                    point: {
+                        radius: 5,
+                        hitRadius: 10,
+                        hoverRadius: 7
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) {
+                                const ds = ctx.dataset || {};
+                                const orig = (ds.originalData && ds.originalData[ctx.dataIndex] != null) ? ds.originalData[ctx.dataIndex] : ctx.parsed.y;
+                                const v = (orig == null) ? '' : String(orig);
+                                return `${ds.label}: ${v}`;
+                            }
+                        }
+                    },
+                    title: { display: false }
+                }
+            }
+        });
+
+        // Custom pill legend (filled pills in dataset colors)
+        function legendTextColor(hex) {
+            if (!hex || typeof hex !== 'string' || !hex.startsWith('#') || (hex.length !== 7 && hex.length !== 4)) {
+                return '#ffffff';
+            }
+            let r, g, b;
+            if (hex.length === 4) {
+                r = parseInt(hex[1] + hex[1], 16);
+                g = parseInt(hex[2] + hex[2], 16);
+                b = parseInt(hex[3] + hex[3], 16);
+            } else {
+                r = parseInt(hex.slice(1, 3), 16);
+                g = parseInt(hex.slice(3, 5), 16);
+                b = parseInt(hex.slice(5, 7), 16);
+            }
+            // Relative luminance
+            const lum = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+            return lum > 0.65 ? '#000000' : '#ffffff';
+        }
+
+        const legendEl = document.getElementById('chartLegend');
+        if (legendEl) {
+            legendEl.innerHTML = '';
+            chartData.datasets.forEach((ds, i) => {
+                const bg = ds.borderColor || '#000000';
+                const pill = document.createElement('button');
+                pill.type = 'button';
+                pill.className = 'legend-pill';
+                pill.textContent = ds.label;
+                pill.style.backgroundColor = bg;
+                pill.style.color = legendTextColor(bg);
+                pill.addEventListener('click', () => {
+                    const visible = chart.isDatasetVisible(i);
+                    chart.setDatasetVisibility(i, !visible);
+                    pill.classList.toggle('is-hidden', visible);
+                    chart.update();
+                });
+                legendEl.appendChild(pill);
+            });
+        }
+    </script>
+</body>
+</html>

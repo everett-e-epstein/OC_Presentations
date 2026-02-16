@@ -1,0 +1,431 @@
+/* OC Evaluation Forms - Shared Stylesheet */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Diatype';
+    src: url('../fonts/Diatype EDU/ABCDiatypeEdu-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Diatype';
+    src: url('../fonts/Diatype EDU/ABCDiatypeEdu-RegularItalic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Diatype';
+    src: url('../fonts/Diatype EDU/ABCDiatypeEdu-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Diatype';
+    src: url('../fonts/Diatype EDU/ABCDiatypeEdu-LightItalic.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Diatype';
+    src: url('../fonts/Diatype EDU/ABCDiatypeEdu-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Diatype';
+    src: url('../fonts/Diatype EDU/ABCDiatypeEdu-MediumItalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Diatype';
+    src: url('../fonts/Diatype EDU/ABCDiatypeEdu-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Diatype';
+    src: url('../fonts/Diatype EDU/ABCDiatypeEdu-BoldItalic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Diatype';
+    src: url('../fonts/Diatype EDU/ABCDiatypeEdu-Thin.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Diatype';
+    src: url('../fonts/Diatype EDU/ABCDiatypeEdu-ThinItalic.otf') format('opentype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Timezone';
+    src: url('../fonts/Diatype EDU/HALTimezone-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Timezone';
+    src: url('../fonts/Diatype EDU/HALTimezone-Italic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Print styles */
+@media print {
+    body {
+        margin: 0;
+        padding: 20px;
+    }
+    .no-print {
+        display: none;
+    }
+    .page-break {
+        page-break-before: always;
+    }
+}
+
+/* Base styles - Everything in Diatype by default */
+body {
+    font-family: 'Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 20px 40px;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    font-family: Timezone;
+}
+
+.header {
+    /* border-bottom: 3px solid #000;
+    padding-bottom: 20px;
+    margin-bottom: 30px; */
+    position: relative;
+}
+
+.oc-title {
+    font-family: 'Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    border: 2px solid;
+    padding: 0pc 20px;
+    height: 40px;
+    border-radius: 50px;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+/* Fixed title + download button cluster */
+.fixed-topbar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 1000;
+}
+
+.fixed-topbar .oc-title {
+    margin-bottom: 0; /* avoid extra vertical space in the fixed cluster */
+}
+
+.fixed-topbar .download-btn {
+    position: static;
+    right: auto;
+    margin-bottom: 0;
+}
+
+.date {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+.instructor-section {
+    /* background-color: #f9f9f9; */
+    padding: 20px;
+    margin: 30px 0;
+    /* border-left: 4px solid #333; */
+}
+
+.instructor-section .section-title {
+    color: #000;
+    border-bottom: 2px solid #666;
+}
+
+.review {
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+}
+
+.instructor-section .review {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+.reviewer-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Peer label badges - filled pills */
+.peer-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 10px;
+    background-color: #004aea;
+    color: #ffffff;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/* Peer pill colors (match chart lines) */
+.peer-pill-1 {
+    background-color: #ff2bd6;
+    color: #ffffff;
+}
+.peer-pill-2 {
+    background-color: #004aea;
+    color: #ffffff;
+}
+.peer-pill-3 {
+    background-color: #006834;
+    color: #ffffff;
+}
+.peer-pill-4 {
+    background-color: #ff610b;
+    color: #ffffff;
+}
+
+/* Grade circle colors per peer section (match chart + pill) */
+.peer-1 .grade-circle {
+    background-color: #ff2bd6;
+    color: #ffffff;
+}
+.peer-2 .grade-circle {
+    background-color: #004aea;
+    color: #ffffff;
+}
+.peer-3 .grade-circle {
+    background-color: #006834;
+    color: #ffffff;
+}
+.peer-4 .grade-circle {
+    background-color: #ff610b;
+    color: #ffffff;
+}
+
+.project-description {
+    font-family: 'Timezone', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-style: italic;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fafafa;
+    border-left: 3px solid #ddd;
+}
+
+.question {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 28px;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+/* Don’t draw a separator after the last question in a block */
+.question:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Left column in each question row (label + comment stack) */
+.question-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.question-label {
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.rating {
+    font-weight: 700;
+    font-size: 18px;
+    color: #000;
+    justify-self: end;
+    align-self: center;
+}
+
+/* Rating number badge - filled circle */
+.grade-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #b5b5b5;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Comments in Timezone font */
+.comment {
+    font-family: 'Timezone', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    color: #555;
+    margin-left: 10px;
+    line-height: 1.5;
+}
+
+.additional-comments {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    font-size: 17px;
+}
+
+.additional-comments-label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Additional comments text also in Timezone */
+.additional-comments > div {
+    font-family: 'Timezone', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.download-btn {
+    position: absolute;
+    font-family: 'Diatype';
+    right: 30px;
+    background-color: #333;
+    color: white;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: none;
+    border-radius: 44px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.download-btn:hover {
+    background-color: #555;
+}
+
+.download-btn:focus-visible {
+    outline: 3px solid #004aea;
+    outline-offset: 3px;
+}
+
+.download-icon {
+    width: 22px;
+    height: 22px;
+    color: #ffffff;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 40px 0;
+}
+
+.chart-container {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+}
+
+/* Custom chart legend: filled color pills */
+.legend-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.legend-pill {
+    appearance: none;
+    border: 0;
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-family: 'Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.legend-pill.is-hidden {
+    opacity: 0.35;
+}
+
+#ratingsChart {
+    max-height: 400px;
+}

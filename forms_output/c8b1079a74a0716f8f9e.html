@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OC Evaluation - Donatella Thomas</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="fixed-topbar">
+        <div class="oc-title">OC Presentation 1</div>
+        <button class="download-btn no-print" onclick="window.print()" aria-label="Download as PDF" title="Download as PDF">
+            <svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 3v10m0 0l4-4m-4 4l-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 17v3h16v-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+    
+    <div class="header">
+        <h2>Donatella Thomas</h2>
+    </div>
+    
+    <div class="chart-container">
+        <div id="chartLegend" class="legend-pills"></div>
+        <canvas id="ratingsChart"></canvas>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Peer Reviews</div>
+
+        <div class="review peer-review peer-1">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-1">Peer 1</span></div>
+
+            <div class="project-description">
+                "The project is about helping get the information about instruments to everyone with a focus on making it price effective. "
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">Donatella had done lots of research and got her problem statement across clearly.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">Donatella kept the presentation moving along smoothly. I wish she slowed down a little because the information was fascinating but hard to keep track of with her speed.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">Donatella spoke clearly and was well rehearsed. My only issue was with her turning around the screen so much.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">The visuals were good but basic.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">She engaged the audience very well and was very passionate about her topic.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">She answered questions well</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+        </div>
+
+        <div class="review peer-review peer-2">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-2">Peer 2</span></div>
+
+            <div class="project-description">
+                "Music and learning different instruments has become really expensive and complex that could be solved by creating a site that has all the information you may need to know."
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">Sequence was strong and easy to follow along with</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">Flowed really well from slide to slide that made it easy to understand the project.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">Spoke clearly and the way you explained everything was very understandable.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">good visuals and images throughout the presentation</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">engagement was good, I do think you could maybe include a personal story or make the story/meaning more relatable.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">you did so amazing answering all the questions :) (there were no questions)</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+        </div>
+
+        <div class="review peer-review peer-3">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-3">Peer 3</span></div>
+
+            <div class="project-description">
+                "Create a website to show how to take care of your instrument, and what you can do to fix simple issues"
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">She has a lot of personal experience with the topic but she was able to dig deeper into what people need</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">Her presentation made sense and was well thought out</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">she is very well spoken and she didn't ramble</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">Simple and well designed</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">She was good at making eye contact</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">only had complement because it is a great idea</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+        </div>
+
+        <div class="review peer-review peer-4">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-4">Peer 4</span></div>
+
+            <div class="project-description">
+                "A platform or database that streamlines information about musical instruments."
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">She led with the issue and closed with the solution. Well structured.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">Everything flowed nicely.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">Very clear in expressing her thoughts.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">Very image-based, she let her words do most of the talking.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">Audience was engaged.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">There weren't really any questions to be answered, that means she got her point across.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="additional-comments">
+                <div class="additional-comments-label">Additional Comments:</div>
+                <div>I look forward to seeing this, that visual direction looks very cool.</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr>
+    <div class="instructor-section">
+        <div class="section-title">Instructor Review - Everett</div>
+
+        <div class="review">
+
+            <div class="project-description">
+                "A platform that streamlines information about rock instruments"
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">I think you could lean into the hobby side of this problem as well!</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">I could imagine maybe padding it out a bit more (perhaps adding in a matrix?).</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">Nice and clear.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">I really enjoyed the sparse clarity of your visuals throughout. It was well considered and efficient. Awesome work here.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">Well done!</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">Well done!</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="additional-comments">
+                <div class="additional-comments-label">Additional Comments:</div>
+                <div>It would be great to send out a survey to people that play instruments.</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Chart data
+        const chartData = {"labels": ["Structure", "Transitions", "Speaking", "Visuals", "Engagement", "Q+A"], "datasets": [{"label": "Peer 1", "data": [4.0, 4.0, 4.0, 3.0, 4.0, 4.0], "originalData": [4.0, 4.0, 4.0, 3.0, 4.0, 4.0], "borderColor": "#ff2bd6", "backgroundColor": "#ff2bd6", "fill": false}, {"label": "Peer 2", "data": [5.0, 5.0, 5.0, 5.0, 3.0, 5.0], "originalData": [5.0, 5.0, 5.0, 5.0, 3.0, 5.0], "borderColor": "#004aea", "backgroundColor": "#004aea", "fill": false}, {"label": "Peer 3", "data": [5.04, 5.04, 5.04, 5.04, 5.04, 5.04], "originalData": [5.0, 5.0, 5.0, 5.0, 5.0, 5.0], "borderColor": "#006834", "backgroundColor": "#006834", "fill": false, "order": 998}, {"label": "Peer 4", "data": [4.96, 4.96, 4.96, 4.96, 4.96, 4.96], "originalData": [5.0, 5.0, 5.0, 5.0, 5.0, 5.0], "borderColor": "#ff610b", "backgroundColor": "#ff610b", "fill": false, "order": 997}, {"label": "Everett", "data": [4.0, 3.0, 4.0, 4.0, 4.0, 4.0], "borderColor": "#000000", "backgroundColor": "#000000", "borderWidth": 4, "borderDash": [], "fill": false}]};
+        
+        // Create the chart
+        const ctx = document.getElementById('ratingsChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: chartData.labels,
+                datasets: chartData.datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 6,
+                        ticks: {
+                            stepSize: 1,
+                            callback: function(value) {
+                                // Keep headroom to 6 but don't label it (so it still reads as a 1–5 rubric)
+                                return value === 6 ? '' : value;
+                            }
+                        },
+                        title: {
+                            display: false
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: false
+                        }
+                    }
+                },
+                elements: {
+                    line: {
+                        tension: 0.4,
+                        borderWidth: 3
+                    },
+                    point: {
+                        radius: 5,
+                        hitRadius: 10,
+                        hoverRadius: 7
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) {
+                                const ds = ctx.dataset || {};
+                                const orig = (ds.originalData && ds.originalData[ctx.dataIndex] != null) ? ds.originalData[ctx.dataIndex] : ctx.parsed.y;
+                                const v = (orig == null) ? '' : String(orig);
+                                return `${ds.label}: ${v}`;
+                            }
+                        }
+                    },
+                    title: { display: false }
+                }
+            }
+        });
+
+        // Custom pill legend (filled pills in dataset colors)
+        function legendTextColor(hex) {
+            if (!hex || typeof hex !== 'string' || !hex.startsWith('#') || (hex.length !== 7 && hex.length !== 4)) {
+                return '#ffffff';
+            }
+            let r, g, b;
+            if (hex.length === 4) {
+                r = parseInt(hex[1] + hex[1], 16);
+                g = parseInt(hex[2] + hex[2], 16);
+                b = parseInt(hex[3] + hex[3], 16);
+            } else {
+                r = parseInt(hex.slice(1, 3), 16);
+                g = parseInt(hex.slice(3, 5), 16);
+                b = parseInt(hex.slice(5, 7), 16);
+            }
+            // Relative luminance
+            const lum = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+            return lum > 0.65 ? '#000000' : '#ffffff';
+        }
+
+        const legendEl = document.getElementById('chartLegend');
+        if (legendEl) {
+            legendEl.innerHTML = '';
+            chartData.datasets.forEach((ds, i) => {
+                const bg = ds.borderColor || '#000000';
+                const pill = document.createElement('button');
+                pill.type = 'button';
+                pill.className = 'legend-pill';
+                pill.textContent = ds.label;
+                pill.style.backgroundColor = bg;
+                pill.style.color = legendTextColor(bg);
+                pill.addEventListener('click', () => {
+                    const visible = chart.isDatasetVisible(i);
+                    chart.setDatasetVisibility(i, !visible);
+                    pill.classList.toggle('is-hidden', visible);
+                    chart.update();
+                });
+                legendEl.appendChild(pill);
+            });
+        }
+    </script>
+</body>
+</html>

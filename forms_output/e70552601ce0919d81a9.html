@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OC Evaluation - Louisa Benedict</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="fixed-topbar">
+        <div class="oc-title">OC Presentation 1</div>
+        <button class="download-btn no-print" onclick="window.print()" aria-label="Download as PDF" title="Download as PDF">
+            <svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 3v10m0 0l4-4m-4 4l-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 17v3h16v-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+    
+    <div class="header">
+        <h2>Louisa Benedict</h2>
+    </div>
+    
+    <div class="chart-container">
+        <div id="chartLegend" class="legend-pills"></div>
+        <canvas id="ratingsChart"></canvas>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Peer Reviews</div>
+
+        <div class="review peer-review peer-1">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-1">Peer 1</span></div>
+
+            <div class="project-description">
+                "an app that is your friend that has been to any country to give advice in that country. more like essentials."
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">Well structured, could play around with not giving the initial idea at the very beginning and then lead up into it.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">good summarization. could have better transitions</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">used um a lot but so do I, well spoken and loud</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">Love the examples and images</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">Visuals were engaging, some chuckles</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">Really good, open minded. Wanted feedback</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+        </div>
+
+        <div class="review peer-review peer-2">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-2">Peer 2</span></div>
+
+            <div class="project-description">
+                "Travel document all-in-one app/navigator."
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">overall got the jist from what they were trying to say/show on each slide.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">a little choppy at some moments</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">Could be louder and more confident.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">Not designed very interestingly.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">2</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">engaged with the audience at some points (points for crediting tala on the app she showed you)</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">very insightful and sure of the direction and what they wanted to do whenever the audience asked specific questions on that.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="additional-comments">
+                <div class="additional-comments-label">Additional Comments:</div>
+                <div>good job</div>
+            </div>
+
+        </div>
+
+        <div class="review peer-review peer-3">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-3">Peer 3</span></div>
+
+            <div class="project-description">
+                "Louisa is creating an app to assist users with travel. More specifically, a streamlined platform to navigate the documents needed to travel to specific countries in hopes to make travel information more accessible. "
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">lots of research on the existing platforms and thought it was good how you started with this because it gave a baseline for us to understand the gap in the market</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">Visuals could be improved (which she said) but summaries wise it was strong!</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">Good pacing and projection</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">Again, visually could be improved (which she said)</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">would love to know more about why this for her, does she travel alot? has she had an issue?</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">good! was super conversational</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="additional-comments">
+                <div class="additional-comments-label">Additional Comments:</div>
+                <div>love the virtual scrapbook! would be cool to make friends and see what they have, thinking like pokemon go... collect them all!</div>
+            </div>
+
+        </div>
+
+        <div class="review peer-review peer-4">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-4">Peer 4</span></div>
+
+            <div class="project-description">
+                "travel companion app for solo travelers. your friend that has traveled to every country. for safety and organization "
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">some parts were a bit short and could be expanded but i could follow along. i liked the figma post its transitioning into slides w further details</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">content was summarized nicely but could transition a tad better. maybe group presentation more in themes</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">could project a little more, ended a couple slides with "yeah" and ended all slides with "that's it". could be a bit more professional / confident</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">could be a more designed but images related to the content.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">some moments had lots of enthusiasm, other moments was calmer. could use a practice run</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">open to input and answered every question. word vomited a little</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="additional-comments">
+                <div class="additional-comments-label">Additional Comments:</div>
+                <div>it would be nice to see travel photos / hear an example of when you would have needed this app while solo traveling during inspo section @ start</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr>
+    <div class="instructor-section">
+        <div class="section-title">Instructor Review - Everett</div>
+
+        <div class="review">
+
+            <div class="project-description">
+                "A more streamlined, clear version of a travel app"
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">The opening naming of the problem, and the articulation of your experience nicely grounded us in the problem. Your research was a neat feature as well. Sherpa gives you a great model, and I like that you elaborated on this app.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">The shift to imagery at the end felt a bit abrupt, and your type slides could carry some of the personality of brand.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">Definitely don't undercut your presentation; you have such good work here — be a bit cocky!</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">The big visual moments (i.e. Reddit) nicely grounded us, and you might make your type do something similar.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">Well done answering questions.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">You had a solid response to Delaney's question about privacy, and you can absolutely refine that answer further as you think through the design.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="additional-comments">
+                <div class="additional-comments-label">Additional Comments:</div>
+                <div>Keeping looking to Sherpa for clarity! It's a solid idea. Elyse's idea of a Duolingo element is such a smart extension. Belle nicely push for an "extension," which I similarly like.  </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Chart data
+        const chartData = {"labels": ["Structure", "Transitions", "Speaking", "Visuals", "Engagement", "Q+A"], "datasets": [{"label": "Peer 1", "data": [4.0, 3.0, 4.0, 5.0, 4.0, 4.0], "originalData": [4.0, 3.0, 4.0, 5.0, 4.0, 4.0], "borderColor": "#ff2bd6", "backgroundColor": "#ff2bd6", "fill": false}, {"label": "Peer 2", "data": [4.0, 3.0, 3.0, 2.0, 4.0, 5.0], "originalData": [4.0, 3.0, 3.0, 2.0, 4.0, 5.0], "borderColor": "#004aea", "backgroundColor": "#004aea", "fill": false}, {"label": "Peer 3", "data": [5.0, 4.0, 5.0, 3.0, 4.0, 5.0], "originalData": [5.0, 4.0, 5.0, 3.0, 4.0, 5.0], "borderColor": "#006834", "backgroundColor": "#006834", "fill": false}, {"label": "Peer 4", "data": [4.0, 4.0, 4.0, 3.0, 4.0, 4.0], "originalData": [4.0, 4.0, 4.0, 3.0, 4.0, 4.0], "borderColor": "#ff610b", "backgroundColor": "#ff610b", "fill": false}, {"label": "Everett", "data": [4.0, 3.0, 3.0, 3.0, 4.0, 4.0], "borderColor": "#000000", "backgroundColor": "#000000", "borderWidth": 4, "borderDash": [], "fill": false}]};
+        
+        // Create the chart
+        const ctx = document.getElementById('ratingsChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: chartData.labels,
+                datasets: chartData.datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 6,
+                        ticks: {
+                            stepSize: 1,
+                            callback: function(value) {
+                                // Keep headroom to 6 but don't label it (so it still reads as a 1–5 rubric)
+                                return value === 6 ? '' : value;
+                            }
+                        },
+                        title: {
+                            display: false
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: false
+                        }
+                    }
+                },
+                elements: {
+                    line: {
+                        tension: 0.4,
+                        borderWidth: 3
+                    },
+                    point: {
+                        radius: 5,
+                        hitRadius: 10,
+                        hoverRadius: 7
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) {
+                                const ds = ctx.dataset || {};
+                                const orig = (ds.originalData && ds.originalData[ctx.dataIndex] != null) ? ds.originalData[ctx.dataIndex] : ctx.parsed.y;
+                                const v = (orig == null) ? '' : String(orig);
+                                return `${ds.label}: ${v}`;
+                            }
+                        }
+                    },
+                    title: { display: false }
+                }
+            }
+        });
+
+        // Custom pill legend (filled pills in dataset colors)
+        function legendTextColor(hex) {
+            if (!hex || typeof hex !== 'string' || !hex.startsWith('#') || (hex.length !== 7 && hex.length !== 4)) {
+                return '#ffffff';
+            }
+            let r, g, b;
+            if (hex.length === 4) {
+                r = parseInt(hex[1] + hex[1], 16);
+                g = parseInt(hex[2] + hex[2], 16);
+                b = parseInt(hex[3] + hex[3], 16);
+            } else {
+                r = parseInt(hex.slice(1, 3), 16);
+                g = parseInt(hex.slice(3, 5), 16);
+                b = parseInt(hex.slice(5, 7), 16);
+            }
+            // Relative luminance
+            const lum = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+            return lum > 0.65 ? '#000000' : '#ffffff';
+        }
+
+        const legendEl = document.getElementById('chartLegend');
+        if (legendEl) {
+            legendEl.innerHTML = '';
+            chartData.datasets.forEach((ds, i) => {
+                const bg = ds.borderColor || '#000000';
+                const pill = document.createElement('button');
+                pill.type = 'button';
+                pill.className = 'legend-pill';
+                pill.textContent = ds.label;
+                pill.style.backgroundColor = bg;
+                pill.style.color = legendTextColor(bg);
+                pill.addEventListener('click', () => {
+                    const visible = chart.isDatasetVisible(i);
+                    chart.setDatasetVisibility(i, !visible);
+                    pill.classList.toggle('is-hidden', visible);
+                    chart.update();
+                });
+                legendEl.appendChild(pill);
+            });
+        }
+    </script>
+</body>
+</html>

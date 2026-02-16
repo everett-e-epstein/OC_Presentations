@@ -1,0 +1,60 @@
+🎓 OC EVALUATION FORMS - QUICK START
+=====================================
+
+✅ All 17 forms have been successfully generated!
+
+📂 LOCATION
+-----------
+All files are in: forms_output/
+
+📋 TO VIEW FORMS
+----------------
+1. Open Finder
+2. Navigate to: Documents/UTenn/452/2026/OC_Tool/forms_output/
+3. Double-click "index.html" to open in your browser
+4. Click any student name to view their evaluation form
+
+💾 TO DOWNLOAD AS PDF
+----------------------
+1. Open any student's form
+2. Click the "Download as PDF" button at the top
+   OR press Cmd+P (Mac) / Ctrl+P (Windows)
+3. Choose "Save as PDF" from the printer options
+4. Save the file
+
+👥 WHAT'S INCLUDED
+------------------
+Each of the 17 students has:
+- Visual chart showing all ratings
+- 4 peer reviews (from classmates)
+- 1 instructor review (from Everett)
+
+📊 VISUAL CHART
+---------------
+Each form includes an interactive line chart:
+✓ Shows ratings across 6 categories
+✓ Each reviewer has a unique colored line
+✓ Everett's line is black (thicker) for clear distinction
+✓ Easy to see patterns and compare reviews at a glance
+
+📊 EVERETT'S REVIEWS
+--------------------
+Instructor reviews are CLEARLY SEPARATED with:
+✓ Gray background
+✓ "Instructor Review - Everett" heading
+✓ Distinct visual styling
+
+🔄 TO UPDATE FORMS
+-------------------
+If you need to regenerate with new data:
+1. Replace the CSV file in the data/ folder
+2. Run: python3 generate_forms.py
+3. New forms will be created
+
+📚 DOCUMENTATION
+----------------
+- README.md - Full documentation
+- SUMMARY.md - Detailed project summary
+
+=====================================
+Ready to use! Open forms_output/index.html to get started.
