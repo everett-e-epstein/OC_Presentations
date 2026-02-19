@@ -84,6 +84,27 @@ def get_student_filename(student_name: str, filename_map: dict) -> str:
     filename_map[key] = filename
     return filename
 
+def _normalize_reviewee(name: str) -> str:
+    """
+    Normalize a reviewee name to a canonical first-name-only lowercase key.
+    Handles case variants (e.g. 'Sophia' vs 'sophia') and full names
+    (e.g. 'Hannah Smith' → 'hannah') by checking against DISPLAY_NAME_BY_FIRST_LOWER.
+    """
+    raw = name.strip()
+    if not raw:
+        return ""
+    lower = raw.lower()
+    # If it's already a known first-name key, return it
+    if lower in DISPLAY_NAME_BY_FIRST_LOWER:
+        return lower
+    # Check if it matches a full display name (e.g. "Hannah Smith" → "hannah")
+    for key, full in DISPLAY_NAME_BY_FIRST_LOWER.items():
+        if full.lower() == lower:
+            return key
+    # Fall back to lowercase for consistent keying
+    return lower
+
+
 def parse_csv(filename):
     """Parse the CSV file and organize reviews by reviewee."""
     reviews_by_student = defaultdict(lambda: {"peer_reviews": [], "instructor_reviews": []})
@@ -101,7 +122,7 @@ def parse_csv(filename):
     with open(filename, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for row in reader:
-            reviewee = row.get("Who you are reviewing:", "").strip()
+            reviewee = _normalize_reviewee(row.get("Who you are reviewing:", ""))
             reviewer = row.get("Your name:", "").strip()
             
             if not reviewee or not reviewer:
@@ -535,7 +556,7 @@ def generate_html_form(student_name, data, output_dir, output_filename):
 
 def main():
     """Main function to generate all forms."""
-    csv_file = "data/OC • Evaluation 1 (Responses) - Form Responses 1.csv"
+    csv_file = "data/OC • Evaluation 1 (Responses) - Form Responses 1 (1).csv"
     output_dir = "forms_output"
     
     # Create output directory
