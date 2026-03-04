@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CP Evaluation - Belle Clement</title>
+    <link rel="icon" href="../forms_output/favicon.svg" type="image/svg+xml">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="../forms_output/styles.css">
+    <style>
+        /* Let the radar fill the container width as a square */
+        #ratingsChart {
+            display: block;
+            margin: 0 auto;
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed-topbar">
+        <div class="oc-title">CP Evaluation 1</div>
+        <button class="download-btn no-print" onclick="window.print()" aria-label="Download as PDF" title="Download as PDF">
+            <svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 3v10m0 0l4-4m-4 4l-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 17v3h16v-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+
+    <div class="header">
+        <h2>Belle Clement</h2>
+    </div>
+
+    <div class="chart-container">
+        <div id="chartLegend" class="legend-pills"></div>
+        <canvas id="ratingsChart"></canvas>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Peer Reviews</div>
+
+        <div class="review peer-review peer-1">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-1">Peer 1</span></div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Argument</div>
+
+                    <div class="comment">I think the logo is fun and playful that aligns with the brand</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Originality</div>
+
+                    <div class="comment">I think the idea is fun and original that you can expand the system in a lot of different ways</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Graphic Craft</div>
+
+                    <div class="comment">I think the logo could be tweaked a little bit to be a bit more exciting and dynamic, but I think what you have now works as well</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+            </div>
+
+            <div class="additional-comments">
+                <div class="additional-comments-label">Additional Comments:</div>
+                <div>I really like the motion ideas you have for this project</div>
+            </div>
+
+        </div>
+
+        <div class="review peer-review peer-2">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-2">Peer 2</span></div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Argument</div>
+
+                    <div class="comment">I think just finalizing touches on the logo would help refine everything.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Originality</div>
+
+                    <div class="comment">I've never really seen healthy foods marketed in this way before so I think it's really clever.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Graphic Craft</div>
+
+                    <div class="comment">I'd say the strongest element at the moment is the typography. The weakest would be the packaging itself since it is not super prototyped out yet.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        const chartData = {"labels": ["Argument", "Originality", "Graphic Craft"], "datasets": [{"label": "Peer 1", "data": [4.0, 5.0, 4.0], "originalData": [4.0, 5.0, 4.0], "borderColor": "#ff2bd6", "backgroundColor": "rgba(255,43,214,0.12)", "pointBackgroundColor": "#ff2bd6", "pointRadius": 5, "fill": true, "borderWidth": 2}, {"label": "Peer 2", "data": [5.0, 5.0, 5.0], "originalData": [5.0, 5.0, 5.0], "borderColor": "#004aea", "backgroundColor": "rgba(0,74,234,0.12)", "pointBackgroundColor": "#004aea", "pointRadius": 5, "fill": true, "borderWidth": 2}]};
+
+        const ctx = document.getElementById('ratingsChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: chartData.labels,
+                datasets: chartData.datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                aspectRatio: 1,
+                layout: {
+                    padding: { top: 10, bottom: 10, left: 30, right: 30 }
+                },
+                scales: {
+                    r: {
+                        min: 0,
+                        max: 5,
+                        ticks: {
+                            stepSize: 1,
+                            display: false
+                        },
+                        pointLabels: {
+                            font: { size: 15, weight: '600' },
+                            color: '#333'
+                        },
+                        grid: { color: 'rgba(0,0,0,0.1)' },
+                        angleLines: { color: 'rgba(0,0,0,0.15)' }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) {
+                                const ds = ctx.dataset || {};
+                                const orig = (ds.originalData && ds.originalData[ctx.dataIndex] != null)
+                                    ? ds.originalData[ctx.dataIndex]
+                                    : ctx.parsed.r;
+                                const v = (orig == null) ? '' : String(orig);
+                                return `${ds.label}: ${v}`;
+                            }
+                        }
+                    },
+                    title: { display: false }
+                }
+            }
+        });
+
+        // Custom pill legend
+        function legendTextColor(hex) {
+            if (!hex || typeof hex !== 'string' || !hex.startsWith('#') ||
+                (hex.length !== 7 && hex.length !== 4)) return '#ffffff';
+            let r, g, b;
+            if (hex.length === 4) {
+                r = parseInt(hex[1]+hex[1], 16);
+                g = parseInt(hex[2]+hex[2], 16);
+                b = parseInt(hex[3]+hex[3], 16);
+            } else {
+                r = parseInt(hex.slice(1,3), 16);
+                g = parseInt(hex.slice(3,5), 16);
+                b = parseInt(hex.slice(5,7), 16);
+            }
+            const lum = (0.2126*r + 0.7152*g + 0.0722*b) / 255;
+            return lum > 0.65 ? '#000000' : '#ffffff';
+        }
+
+        const legendEl = document.getElementById('chartLegend');
+        if (legendEl) {
+            legendEl.innerHTML = '';
+            chartData.datasets.forEach((ds, i) => {
+                const bg = ds.borderColor || '#000000';
+                const pill = document.createElement('button');
+                pill.type = 'button';
+                pill.className = 'legend-pill';
+                pill.textContent = ds.label;
+                pill.style.backgroundColor = bg;
+                pill.style.color = legendTextColor(bg);
+                pill.addEventListener('click', () => {
+                    const visible = chart.isDatasetVisible(i);
+                    chart.setDatasetVisibility(i, !visible);
+                    pill.classList.toggle('is-hidden', visible);
+                    chart.update();
+                });
+                legendEl.appendChild(pill);
+            });
+        }
+    </script>
+</body>
+</html>
