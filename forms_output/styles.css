@@ -479,6 +479,7 @@ body { background-color: #f5f5f5; }
 .eval-btn {
     display: inline-block;
     padding: 7px 18px;
+    padding-bottom: 5px;
     border-radius: 999px;
     font-family: 'Diatype', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -503,4 +504,84 @@ body { background-color: #f5f5f5; }
 .cp-btn:hover {
     background-color: #004aea;
     color: #fff;
+}
+
+.dm-btn {
+    color: #006834;
+    border-color: #006834;
+}
+.dm-btn:hover {
+    background-color: #006834;
+    color: #fff;
+}
+
+/* Draft midterm top nav — pill links (no underline / dot separator) */
+.draft-midterm-nav-pills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 28px;
+}
+
+.draft-midterm-nav-pill {
+    text-decoration: none;
+}
+
+/* Draft midterm / notes: comment rows without rating column */
+.question.question--draft-note {
+    grid-template-columns: 1fr;
+}
+.question.question--draft-note .comment {
+    margin-left: 0;
+}
+
+/* Draft midterm: one page per student — note list */
+.draft-midterm-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.draft-midterm-list-item {
+    font-family: 'Timezone', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    color: #555;
+    line-height: 1.55;
+    margin: 0 0 16px;
+    padding: 0 0 16px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.draft-midterm-list-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.draft-midterm-toc-list.draft-midterm-t-overview {
+    list-style: none;
+    padding-left: 0;
+}
+
+.draft-midterm-toc-list.draft-midterm-t-overview li {
+    margin-bottom: 10px;
+}
+
+.draft-midterm-toc {
+    max-width: 800px;
+    margin: 0 auto 48px;
+    padding: 0 20px;
+}
+
+.draft-midterm-toc-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-family: 'Diatype', sans-serif;
+    line-height: 1.8;
+}
+
+.draft-midterm-toc-list a {
+    color: #006834;
+    font-weight: 600;
 }
