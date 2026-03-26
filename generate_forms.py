@@ -50,6 +50,14 @@ def display_name(name: str) -> str:
         return ""
     return DISPLAY_NAME_BY_FIRST_LOWER.get(raw.lower(), raw)
 
+
+def _html_comment_body(text: str) -> str:
+    """Preserve line breaks from form responses in HTML."""
+    if not text:
+        return text
+    return text.replace("\r\n", "\n").replace("\n", "<br />\n")
+
+
 def _student_key(student_name: str) -> str:
     return (student_name or "").strip().lower()
 
@@ -123,7 +131,7 @@ def parse_csv(filename):
         reader = csv.DictReader(f)
         for row in reader:
             reviewee = _normalize_reviewee(row.get("Who you are reviewing:", ""))
-            reviewer = row.get("Your name:", "").strip()
+            reviewer = (row.get("Your name:", "") or "").strip()
             
             if not reviewee or not reviewer:
                 continue
@@ -155,7 +163,7 @@ def parse_csv(filename):
     
     return reviews_by_student
 
-def prepare_chart_data(data):
+def prepare_chart_data(data, *, instructor_line_color="#000000"):
     """Prepare data for Chart.js visualization."""
     import json
     
@@ -259,9 +267,9 @@ def prepare_chart_data(data):
         datasets.append({
             "label": "Everett",  # Keep instructor name
             "data": ratings_list,
-            "borderColor": '#000000',
+            "borderColor": instructor_line_color,
             # Solid fill so legend is filled
-            "backgroundColor": '#000000',
+            "backgroundColor": instructor_line_color,
             "borderWidth": 4,
             "borderDash": [],
             "fill": False
@@ -274,11 +282,23 @@ def prepare_chart_data(data):
     
     return json.dumps(chart_data)
 
-def generate_html_form(student_name, data, output_dir, output_filename):
+def generate_html_form(
+    student_name,
+    data,
+    output_dir,
+    output_filename,
+    *,
+    oc_label="OC Presentation 1",
+    styles_href="styles.css",
+    favicon_href="favicon.svg",
+    instructor_chart_color="#000000",
+):
     """Generate an HTML form for a single student matching the PDF format."""
     
     # Prepare chart data
-    chart_data = prepare_chart_data(data)
+    chart_data = prepare_chart_data(
+        data, instructor_line_color=instructor_chart_color
+    )
     student_display = display_name(student_name)
     
     html = f"""<!DOCTYPE html>
@@ -287,13 +307,13 @@ def generate_html_form(student_name, data, output_dir, output_filename):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OC Evaluation - {student_display}</title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="{favicon_href}" type="image/svg+xml">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{styles_href}">
 </head>
 <body>
     <div class="fixed-topbar">
-        <div class="oc-title">OC Presentation 1</div>
+        <div class="oc-title">{oc_label}</div>
         <button class="download-btn no-print" onclick="window.print()" aria-label="Download as PDF" title="Download as PDF">
             <svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path d="M12 3v10m0 0l4-4m-4 4l-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -330,7 +350,7 @@ def generate_html_form(student_name, data, output_dir, output_filename):
             if review["project_description"]:
                 html += f"""
             <div class="project-description">
-                "{review['project_description']}"
+                "{_html_comment_body(review['project_description'])}"
             </div>
 """
             
@@ -347,7 +367,7 @@ def generate_html_form(student_name, data, output_dir, output_filename):
 """
                     if comment:
                         html += f"""
-                    <div class="comment">{comment}</div>
+                    <div class="comment">{_html_comment_body(comment)}</div>
 """
                     html += f"""
                 </div>
@@ -362,7 +382,7 @@ def generate_html_form(student_name, data, output_dir, output_filename):
                 html += f"""
             <div class="additional-comments">
                 <div class="additional-comments-label">Additional Comments:</div>
-                <div>{review['additional_comments']}</div>
+                <div>{_html_comment_body(review['additional_comments'])}</div>
             </div>
 """
             
@@ -390,7 +410,7 @@ def generate_html_form(student_name, data, output_dir, output_filename):
             if review["project_description"]:
                 html += f"""
             <div class="project-description">
-                "{review['project_description']}"
+                "{_html_comment_body(review['project_description'])}"
             </div>
 """
             
@@ -407,7 +427,7 @@ def generate_html_form(student_name, data, output_dir, output_filename):
 """
                     if comment:
                         html += f"""
-                    <div class="comment">{comment}</div>
+                    <div class="comment">{_html_comment_body(comment)}</div>
 """
                     html += f"""
                 </div>
@@ -422,7 +442,7 @@ def generate_html_form(student_name, data, output_dir, output_filename):
                 html += f"""
             <div class="additional-comments">
                 <div class="additional-comments-label">Additional Comments:</div>
-                <div>{review['additional_comments']}</div>
+                <div>{_html_comment_body(review['additional_comments'])}</div>
             </div>
 """
             

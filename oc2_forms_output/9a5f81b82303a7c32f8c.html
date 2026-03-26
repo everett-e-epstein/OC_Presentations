@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OC Evaluation - Delaney Kohlstedt</title>
+    <link rel="icon" href="../forms_output/favicon.svg" type="image/svg+xml">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="../forms_output/styles.css">
+</head>
+<body>
+    <div class="fixed-topbar">
+        <div class="oc-title">OC Presentation 2</div>
+        <button class="download-btn no-print" onclick="window.print()" aria-label="Download as PDF" title="Download as PDF">
+            <svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 3v10m0 0l4-4m-4 4l-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 17v3h16v-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+    
+    <div class="header">
+        <h2>Delaney Kohlstedt</h2>
+    </div>
+    
+    <div class="chart-container">
+        <div id="chartLegend" class="legend-pills"></div>
+        <canvas id="ratingsChart"></canvas>
+    </div>
+
+    <hr>
+    <div class="instructor-section">
+        <div class="section-title">Instructor Review - Everett</div>
+
+        <div class="review">
+
+            <div class="project-description">
+                "A gift-box service for service members to utilize for their family. "
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">The personal story works really well, and it's a naturally transition into your research. The pop-up information was useful. Well scripted!</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">Excellent movement from concept to process.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">Very clear and distinctive.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">Love the animation, and smart development of your type here. People were nodding along to this animation moment. I was only confused a bit on the SMS messaging slide.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">Really great anticipation of your audience's attention span. Great listening face!</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">You really thoughtfully answered the audience questions. Great work here. "Sponsoring boxes" is a lovely gesture here. Sarah: perhaps there's a "personal" something that you can add to the box (HQ) to encourage "attunement."</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="additional-comments">
+                <div class="additional-comments-label">Additional Comments:</div>
+                <div>I wonder if you could point to the "stress points" in the presentation itself. </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Chart data
+        const chartData = {"labels": ["Structure", "Transitions", "Speaking", "Visuals", "Engagement", "Q+A"], "datasets": [{"label": "Everett", "data": [5.0, 5.0, 5.0, 4.0, 5.0, 5.0], "borderColor": "#e85d75", "backgroundColor": "#e85d75", "borderWidth": 4, "borderDash": [], "fill": false}]};
+        
+        // Create the chart
+        const ctx = document.getElementById('ratingsChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: chartData.labels,
+                datasets: chartData.datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 6,
+                        ticks: {
+                            stepSize: 1,
+                            callback: function(value) {
+                                // Keep headroom to 6 but don't label it (so it still reads as a 1–5 rubric)
+                                return value === 6 ? '' : value;
+                            }
+                        },
+                        title: {
+                            display: false
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: false
+                        }
+                    }
+                },
+                elements: {
+                    line: {
+                        tension: 0.4,
+                        borderWidth: 3
+                    },
+                    point: {
+                        radius: 5,
+                        hitRadius: 10,
+                        hoverRadius: 7
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) {
+                                const ds = ctx.dataset || {};
+                                const orig = (ds.originalData && ds.originalData[ctx.dataIndex] != null) ? ds.originalData[ctx.dataIndex] : ctx.parsed.y;
+                                const v = (orig == null) ? '' : String(orig);
+                                return `${ds.label}: ${v}`;
+                            }
+                        }
+                    },
+                    title: { display: false }
+                }
+            }
+        });
+
+        // Custom pill legend (filled pills in dataset colors)
+        function legendTextColor(hex) {
+            if (!hex || typeof hex !== 'string' || !hex.startsWith('#') || (hex.length !== 7 && hex.length !== 4)) {
+                return '#ffffff';
+            }
+            let r, g, b;
+            if (hex.length === 4) {
+                r = parseInt(hex[1] + hex[1], 16);
+                g = parseInt(hex[2] + hex[2], 16);
+                b = parseInt(hex[3] + hex[3], 16);
+            } else {
+                r = parseInt(hex.slice(1, 3), 16);
+                g = parseInt(hex.slice(3, 5), 16);
+                b = parseInt(hex.slice(5, 7), 16);
+            }
+            // Relative luminance
+            const lum = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+            return lum > 0.65 ? '#000000' : '#ffffff';
+        }
+
+        const legendEl = document.getElementById('chartLegend');
+        if (legendEl) {
+            legendEl.innerHTML = '';
+            chartData.datasets.forEach((ds, i) => {
+                const bg = ds.borderColor || '#000000';
+                const pill = document.createElement('button');
+                pill.type = 'button';
+                pill.className = 'legend-pill';
+                pill.textContent = ds.label;
+                pill.style.backgroundColor = bg;
+                pill.style.color = legendTextColor(bg);
+                pill.addEventListener('click', () => {
+                    const visible = chart.isDatasetVisible(i);
+                    chart.setDatasetVisibility(i, !visible);
+                    pill.classList.toggle('is-hidden', visible);
+                    chart.update();
+                });
+                legendEl.appendChild(pill);
+            });
+        }
+    </script>
+</body>
+</html>
