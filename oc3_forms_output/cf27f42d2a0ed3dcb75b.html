@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OC Evaluation - Alex Long</title>
+    <link rel="icon" href="../forms_output/favicon.svg" type="image/svg+xml">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="../forms_output/styles.css">
+</head>
+<body>
+    <div class="fixed-topbar">
+        <div class="oc-title">Final OC Presentation</div>
+        <button class="download-btn no-print" onclick="window.print()" aria-label="Download as PDF" title="Download as PDF">
+            <svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 3v10m0 0l4-4m-4 4l-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 17v3h16v-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+    
+    <div class="header">
+        <h2>Alex Long</h2>
+    </div>
+    
+    <div class="chart-container">
+        <div id="chartLegend" class="legend-pills"></div>
+        <canvas id="ratingsChart"></canvas>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Peer Reviews</div>
+
+        <div class="review peer-review peer-1">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-1">Peer 1</span></div>
+
+            <div class="project-description">
+                "A solution to hobby inflation"
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">Glad that you gave some more background</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">Transitions were pretty choppy, try to plan your animation transitions better with your speaking</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">Practice it more so you feel more confident with what you are going to say so you don't need to read your notes as much and can look at the audience.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">Visuals are great.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">Be confident! Would love to see more energy and audience engagement</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">n/a</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+        </div>
+
+        <div class="review peer-review peer-2">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-2">Peer 2</span></div>
+
+            <div class="project-description">
+                "A community app for scuba divers"
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">Everything flowed very smoothly. It was very easy to follow along with the presentation.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">Good flow between the ideas you talked about. It was very easy to follow along.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">You can definitely tell that you're nervous, but its gonna be ok!! Deep breaths and slow down to try and avoid as many filler words.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">The presentation fits perfectly within your brand. Overall, it was a very professional looking presentation.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">You do a very good job of engaging the audience by stating something that everyone can relate to!</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">You did a very good job at engaging in the Q+A. Very open to feedback!</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="additional-comments">
+                <div class="additional-comments-label">Additional Comments:</div>
+                <div>Good Job!</div>
+            </div>
+
+        </div>
+
+        <div class="review peer-review peer-3">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-3">Peer 3</span></div>
+
+            <div class="project-description">
+                "Scuba diving hobby community"
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">yes adequate research</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">flow was good overall</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">little rough on transitions but still thoughtful - you said 'uh' a lot but still felt confident and knowledgeable. more conversational pls</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">visuals look great - but was hoping for some more motion/video after midterm critiques</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">not much engagement</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">open to suggestions</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="additional-comments">
+                <div class="additional-comments-label">Additional Comments:</div>
+                <div>maybe dont put undergraduate thesis presentation anywhere if you are going to be saying it first. great question at the end of the presentation but doesnt necessarily feel aligned just yet to your capstone - push it further; lol maggie just mentioned this</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr>
+    <div class="instructor-section">
+        <div class="section-title">Instructor Review - Everett</div>
+
+        <div class="review">
+
+            <div class="project-description">
+                "An approach to addressing the hobby inflation in scuba."
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">Strong start, and I continue to like the element of "Affordable community." I appreciate that you came back to traditional dive clubs. I wonder if you can obscure the "app design" by calling it something else (just so if cannot be dismissed). Note immediately that this app is fully working and coded. You might speak to all the features on the app.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">I could imagine you refining the transition from your personal story to the statistic (maybe ground the lack of scuba community in a personal story).</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">Be careful of your "ums."</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">Make the x/y axes on your matrix have your same typeface.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">Really clear.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">Maggie notes that you can expand on how this hobby can be developed beyond Scuba.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="additional-comments">
+                <div class="additional-comments-label">Additional Comments:</div>
+                <div>Use the term "nimbleness." Here's the step-by-step framework to address "hobby inflation."   </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Chart data
+        const chartData = {"labels": ["Structure", "Transitions", "Speaking", "Visuals", "Engagement", "Q+A"], "datasets": [{"label": "Peer 1", "data": [4.0, 3.0, 4.0, 5.0, 3.0, 5.0], "originalData": [4.0, 3.0, 4.0, 5.0, 3.0, 5.0], "borderColor": "#ff2bd6", "backgroundColor": "#ff2bd6", "fill": false}, {"label": "Peer 2", "data": [5.0, 5.0, 4.0, 5.0, 5.0, 5.0], "originalData": [5.0, 5.0, 4.0, 5.0, 5.0, 5.0], "borderColor": "#004aea", "backgroundColor": "#004aea", "fill": false}, {"label": "Peer 3", "data": [5.0, 5.0, 4.0, 4.0, 4.0, 4.0], "originalData": [5.0, 5.0, 4.0, 4.0, 4.0, 4.0], "borderColor": "#006834", "backgroundColor": "#006834", "fill": false}, {"label": "Everett", "data": [5.0, 4.0, 4.0, 4.0, 4.0, 4.0], "borderColor": "#6c4ed8", "backgroundColor": "#6c4ed8", "borderWidth": 4, "borderDash": [], "fill": false}]};
+        
+        // Create the chart
+        const ctx = document.getElementById('ratingsChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: chartData.labels,
+                datasets: chartData.datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 6,
+                        ticks: {
+                            stepSize: 1,
+                            callback: function(value) {
+                                // Keep headroom to 6 but don't label it (so it still reads as a 1–5 rubric)
+                                return value === 6 ? '' : value;
+                            }
+                        },
+                        title: {
+                            display: false
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: false
+                        }
+                    }
+                },
+                elements: {
+                    line: {
+                        tension: 0.4,
+                        borderWidth: 3
+                    },
+                    point: {
+                        radius: 5,
+                        hitRadius: 10,
+                        hoverRadius: 7
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) {
+                                const ds = ctx.dataset || {};
+                                const orig = (ds.originalData && ds.originalData[ctx.dataIndex] != null) ? ds.originalData[ctx.dataIndex] : ctx.parsed.y;
+                                const v = (orig == null) ? '' : String(orig);
+                                return `${ds.label}: ${v}`;
+                            }
+                        }
+                    },
+                    title: { display: false }
+                }
+            }
+        });
+
+        // Custom pill legend (filled pills in dataset colors)
+        function legendTextColor(hex) {
+            if (!hex || typeof hex !== 'string' || !hex.startsWith('#') || (hex.length !== 7 && hex.length !== 4)) {
+                return '#ffffff';
+            }
+            let r, g, b;
+            if (hex.length === 4) {
+                r = parseInt(hex[1] + hex[1], 16);
+                g = parseInt(hex[2] + hex[2], 16);
+                b = parseInt(hex[3] + hex[3], 16);
+            } else {
+                r = parseInt(hex.slice(1, 3), 16);
+                g = parseInt(hex.slice(3, 5), 16);
+                b = parseInt(hex.slice(5, 7), 16);
+            }
+            // Relative luminance
+            const lum = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+            return lum > 0.65 ? '#000000' : '#ffffff';
+        }
+
+        const legendEl = document.getElementById('chartLegend');
+        if (legendEl) {
+            legendEl.innerHTML = '';
+            chartData.datasets.forEach((ds, i) => {
+                const bg = ds.borderColor || '#000000';
+                const pill = document.createElement('button');
+                pill.type = 'button';
+                pill.className = 'legend-pill';
+                pill.textContent = ds.label;
+                pill.style.backgroundColor = bg;
+                pill.style.color = legendTextColor(bg);
+                pill.addEventListener('click', () => {
+                    const visible = chart.isDatasetVisible(i);
+                    chart.setDatasetVisibility(i, !visible);
+                    pill.classList.toggle('is-hidden', visible);
+                    chart.update();
+                });
+                legendEl.appendChild(pill);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OC Evaluation - Jeremy Wilkins</title>
+    <link rel="icon" href="../forms_output/favicon.svg" type="image/svg+xml">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="../forms_output/styles.css">
+</head>
+<body>
+    <div class="fixed-topbar">
+        <div class="oc-title">Final OC Presentation</div>
+        <button class="download-btn no-print" onclick="window.print()" aria-label="Download as PDF" title="Download as PDF">
+            <svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 3v10m0 0l4-4m-4 4l-4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 17v3h16v-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+    
+    <div class="header">
+        <h2>Jeremy Wilkins</h2>
+    </div>
+    
+    <div class="chart-container">
+        <div id="chartLegend" class="legend-pills"></div>
+        <canvas id="ratingsChart"></canvas>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Peer Reviews</div>
+
+        <div class="review peer-review peer-1">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-1">Peer 1</span></div>
+
+            <div class="project-description">
+                "The lack of attention spans"
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">Lots of good research on this. Flow feels good. Nothing more to add</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">Good flow and such. I think it might feel a little regimented, but its still good to me.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">I think you might be a little more jazzed about it. It feels like you don't believe it, but maybe that's just a today thing.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">Great visuals. Plenty of great slides. No more comments.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">I think there is not a whole lot of audience engagement, but I think that might just be a today thing. Maybe a few more ways to engage the audience and connect it back to them a little more.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">3</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">Great answers to comments and such. No further comments.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+        </div>
+
+        <div class="review peer-review peer-2">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-2">Peer 2</span></div>
+
+            <div class="project-description">
+                "sustained focus cam be difficult for students, which effects their work. "
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">straight to the point and not overwhelming</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">clear transition from problem to intro</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">No comments. clear and focused. maybe a bit more enthusiasm but i get it i talk the same lol</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">very on theme and structured well</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">Yes, he was open to comments and suggestions.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">it felt like he took the comments into consideration well.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="additional-comments">
+                <div class="additional-comments-label">Additional Comments:</div>
+                <div>na</div>
+            </div>
+
+        </div>
+
+        <div class="review peer-review peer-3">
+            <div class="reviewer-name">Reviewed by:<span class="peer-pill peer-pill-3">Peer 3</span></div>
+
+            <div class="project-description">
+                "tracks and visualizes how focus changes during a work session. Helps users identify their distraction patterns."
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">clear purpose and explanations behind what the decisions are</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">flow worked good from research to introducing project</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">explained the project well and was clear with word choice</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">Hierarchy felt a weird on the slides with the Interval// and then the green text and then a header</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">engaged with the presentation and what the project was about</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">Accepted feedback well</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">5</span></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr>
+    <div class="instructor-section">
+        <div class="section-title">Instructor Review - Everett</div>
+
+        <div class="review">
+
+            <div class="project-description">
+                "A dashboard based system that accurately tracks attention"
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q1: Structure + Sequence</div>
+
+                    <div class="comment">Give us a personal story in the beginning. You might break your two findings (and your two graphics) into two separate slides (just so they can be larger). I like the "it's not..." slide! <br />
+<br />
+Separate out the explanation of the page and the video of the tool. I think it would be worthwhile to position this tool on a matrix with exercise apps (like Strava or Peloton).</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q2: Summaries + Transitions</div>
+
+                    <div class="comment">Pretty clear!</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q3: Speaking</div>
+
+                    <div class="comment">Maybe a bit more casualness.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q4: Visuals</div>
+
+                    <div class="comment">You might just make your slides a bit larger throughout. Make everything bigger. Definitely Video instead of gifs. Have the video as it's own slide.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q5: Audience Engagement</div>
+
+                    <div class="comment">Think "You" language for presenting your story.</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+            <div class="question">
+                <div class="question-left">
+                    <div class="question-label">Q6: Q+A</div>
+
+                    <div class="comment">N/A</div>
+
+                </div>
+                <div class="rating"><span class="grade-circle">4</span></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Chart data
+        const chartData = {"labels": ["Structure", "Transitions", "Speaking", "Visuals", "Engagement", "Q+A"], "datasets": [{"label": "Peer 1", "data": [4.0, 4.0, 4.0, 5.0, 3.0, 5.0], "originalData": [4.0, 4.0, 4.0, 5.0, 3.0, 5.0], "borderColor": "#ff2bd6", "backgroundColor": "#ff2bd6", "fill": false}, {"label": "Peer 2", "data": [5.0, 5.0, 4.0, 5.0, 5.0, 5.0], "originalData": [5.0, 5.0, 4.0, 5.0, 5.0, 5.0], "borderColor": "#004aea", "backgroundColor": "#004aea", "fill": false}, {"label": "Peer 3", "data": [5.0, 5.0, 5.0, 4.0, 5.0, 5.0], "originalData": [5.0, 5.0, 5.0, 4.0, 5.0, 5.0], "borderColor": "#006834", "backgroundColor": "#006834", "fill": false}, {"label": "Everett", "data": [4.0, 4.0, 4.0, 4.0, 4.0, 4.0], "borderColor": "#6c4ed8", "backgroundColor": "#6c4ed8", "borderWidth": 4, "borderDash": [], "fill": false}]};
+        
+        // Create the chart
+        const ctx = document.getElementById('ratingsChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: chartData.labels,
+                datasets: chartData.datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 6,
+                        ticks: {
+                            stepSize: 1,
+                            callback: function(value) {
+                                // Keep headroom to 6 but don't label it (so it still reads as a 1–5 rubric)
+                                return value === 6 ? '' : value;
+                            }
+                        },
+                        title: {
+                            display: false
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: false
+                        }
+                    }
+                },
+                elements: {
+                    line: {
+                        tension: 0.4,
+                        borderWidth: 3
+                    },
+                    point: {
+                        radius: 5,
+                        hitRadius: 10,
+                        hoverRadius: 7
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) {
+                                const ds = ctx.dataset || {};
+                                const orig = (ds.originalData && ds.originalData[ctx.dataIndex] != null) ? ds.originalData[ctx.dataIndex] : ctx.parsed.y;
+                                const v = (orig == null) ? '' : String(orig);
+                                return `${ds.label}: ${v}`;
+                            }
+                        }
+                    },
+                    title: { display: false }
+                }
+            }
+        });
+
+        // Custom pill legend (filled pills in dataset colors)
+        function legendTextColor(hex) {
+            if (!hex || typeof hex !== 'string' || !hex.startsWith('#') || (hex.length !== 7 && hex.length !== 4)) {
+                return '#ffffff';
+            }
+            let r, g, b;
+            if (hex.length === 4) {
+                r = parseInt(hex[1] + hex[1], 16);
+                g = parseInt(hex[2] + hex[2], 16);
+                b = parseInt(hex[3] + hex[3], 16);
+            } else {
+                r = parseInt(hex.slice(1, 3), 16);
+                g = parseInt(hex.slice(3, 5), 16);
+                b = parseInt(hex.slice(5, 7), 16);
+            }
+            // Relative luminance
+            const lum = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+            return lum > 0.65 ? '#000000' : '#ffffff';
+        }
+
+        const legendEl = document.getElementById('chartLegend');
+        if (legendEl) {
+            legendEl.innerHTML = '';
+            chartData.datasets.forEach((ds, i) => {
+                const bg = ds.borderColor || '#000000';
+                const pill = document.createElement('button');
+                pill.type = 'button';
+                pill.className = 'legend-pill';
+                pill.textContent = ds.label;
+                pill.style.backgroundColor = bg;
+                pill.style.color = legendTextColor(bg);
+                pill.addEventListener('click', () => {
+                    const visible = chart.isDatasetVisible(i);
+                    chart.setDatasetVisibility(i, !visible);
+                    pill.classList.toggle('is-hidden', visible);
+                    chart.update();
+                });
+                legendEl.appendChild(pill);
+            });
+        }
+    </script>
+</body>
+</html>

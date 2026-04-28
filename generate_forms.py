@@ -10,6 +10,7 @@ from datetime import datetime
 import os
 import json
 import secrets
+import re
 
 # Question mapping from the CSV to readable labels
 QUESTIONS = {
@@ -42,6 +43,15 @@ DISPLAY_NAME_BY_FIRST_LOWER = {
     "donatella": "Donatella Thomas",
     "sam": "Sam Tugman",
     "jeremy": "Jeremy Wilkins",
+}
+
+# Explicit aliases for shorthand / typo variants in reviewee names
+REVIEWEE_ALIASES = {
+    "jermy": "jeremy",
+    "jeremey": "jeremy",
+    "dontatella": "donatella",
+    "elyseeeeeee": "elyse",
+    "elyseeeeeee (improv pro)": "elyse",
 }
 
 def display_name(name: str) -> str:
@@ -101,7 +111,9 @@ def _normalize_reviewee(name: str) -> str:
     raw = name.strip()
     if not raw:
         return ""
-    lower = raw.lower()
+    lower = " ".join(raw.lower().split())
+    if lower in REVIEWEE_ALIASES:
+        return REVIEWEE_ALIASES[lower]
     # If it's already a known first-name key, return it
     if lower in DISPLAY_NAME_BY_FIRST_LOWER:
         return lower
@@ -109,6 +121,13 @@ def _normalize_reviewee(name: str) -> str:
     for key, full in DISPLAY_NAME_BY_FIRST_LOWER.items():
         if full.lower() == lower:
             return key
+    # Handle variants like "Elyseeeeeee (Improv pro)" -> "elyseeeeeee"
+    first_token = lower.split()[0]
+    first_token = re.sub(r"[^a-z]", "", first_token)
+    if first_token in REVIEWEE_ALIASES:
+        return REVIEWEE_ALIASES[first_token]
+    if first_token in DISPLAY_NAME_BY_FIRST_LOWER:
+        return first_token
     # Fall back to lowercase for consistent keying
     return lower
 

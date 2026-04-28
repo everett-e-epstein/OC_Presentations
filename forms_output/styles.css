@@ -595,6 +595,23 @@ body.capstone-landing .eval-btns {
     border-color: #e85d75;
 }
 
+.oc3-btn {
+    --pill-accent: #6c4ed8;
+    color: #6c4ed8;
+    border-color: #6c4ed8;
+}
+
+.oc3-btn:hover {
+    color: #6c4ed8;
+    background-color: #fff;
+}
+
+.oc3-btn:focus-visible {
+    background-color: transparent;
+    color: #6c4ed8;
+    border-color: #6c4ed8;
+}
+
 /* Draft midterm top nav — pill links (no underline / dot separator) */
 .draft-midterm-nav-pills {
     display: flex;
