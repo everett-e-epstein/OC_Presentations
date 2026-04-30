@@ -19,7 +19,7 @@ from generate_forms import (
     save_filename_map,
 )
 
-CSV_FILE = "/Users/eepstein/Downloads/OC • Evaluation 3 (Responses) - Form Responses 1.csv"
+CSV_FILE = "data/OC • Evaluation 3 (Responses) - Form Responses 1.csv"
 OUTPUT_DIR = "oc3_forms_output"
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -61,7 +61,7 @@ def inject_oc3_links_into_capstone_index(filename_map: dict) -> None:
 def main() -> None:
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     print("Parsing OC3 CSV...")
-    reviews_by_student = parse_csv(CSV_FILE)
+    reviews_by_student = parse_csv(os.path.join(PROJECT_ROOT, CSV_FILE))
     filename_map = load_or_create_filename_map(
         os.path.join(PROJECT_ROOT, OUTPUT_DIR)
     )
